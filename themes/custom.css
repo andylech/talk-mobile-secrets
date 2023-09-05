@@ -1,0 +1,148 @@
+/* @theme custom */
+
+@import 'uncover';
+
+/* Fonts */
+
+@font-face {
+  font-family: Permanent_Marker;
+  src: url('fonts\Google Fonts\Permanent_Marker\PermanentMarker-Regular.ttf');
+  font-weight: regular;
+}
+
+@font-face {
+  font-family: Roboto_Slab;
+  src: url('fonts\Google Fonts\Roboto_Slab\RobotoSlab-VariableFont_wght.ttf');
+}
+
+div.attribution {
+  font-size: 16px;
+}
+
+div.commentary ul {
+  font-size: 24px;
+}
+
+div.detail-summary {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 76px;
+}
+
+h2 {
+  font-size: 60px;
+}
+
+li {
+  font-weight: 600;
+}
+
+section.details ul li {
+  line-height: 1.5em;
+}
+
+section.commentary ul,
+section.details ul li {
+  font-size: 24px;
+}
+
+section.handwriting {
+  font-family: Permanent_Marker, cursive;
+  font-weight: 100;
+}
+
+section.summary ul li,
+section.title ul li {
+  line-height: 1.75em;
+}
+
+section.title {
+  /* font-family: Roboto_Slab; */
+  font-family: cursive;
+}
+
+section.title h2 {
+  font-weight: 900;
+}
+
+section.title ul h3,
+section.title ul h4 {
+  /*
+  font-family: Roboto_Slab;
+  font-size: 40px;
+  */
+
+  font-family: cursive;
+  font-size: 44px;
+}
+
+
+/* Layout */
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.columns3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+section.title ul h3, h4 {
+  text-align: center;
+}
+
+/* Step-through */
+
+/* Magic of step-through bullet points is "list-style-type: none;" and "*" bullets */
+
+div.commentary ul {
+  list-style-type: none;
+}
+
+section.title ul {
+  list-style-type: none;
+}
+
+/* Mermaid */
+
+/* TODO Way to apply Mermaid theme in CSS? Or way to centralize theme? */
+
+.mermaid {
+  font-size: 10px;
+  line-height: 2em;
+}
+
+svg[id^="mermaid-"] {
+  min-width: 480px;
+  min-height: 160px;
+}
+
+/*
+%%{init: {'theme': 'neutral', 'themeVariables': { 'fontSize': '200%' }}}%%
+*/
+
+/* svg[id^="mermaid-"] {
+  min-width: 480px;
+  max-width: 960px;
+  min-height: 360px;
+  max-height: 600px;
+}
+*/
+/*
+svg[id^="mermaid-"] {
+  min-width: 1080px;
+  width: 1080px;
+  min-height: 180px;
+  height: 180px;
+} */
+
+/* div.LR {
+  min-width: 960px;
+} */
