@@ -1,25 +1,41 @@
 ---
 marp: true
 theme: custom
+size: 16:9
 footer: 'Andy Lech - The Secret to Mobile'
---paginate: true
+paginate: true
 ---
 
-<!-- _footer: "" -->
+<!-- Title -->
 
-<!-- _class: summary -->
+<!-- _footer: "" -->
+<!-- _paginate: skip -->
+
+<!-- _class: talk_title invert -->
 
 # The Secret to Mobile
 
-- App Architecture
 - API Design
+- App Architecture
 - Data Handling
 
-#### Andy Lech
+<p />
+
+## Andy Lech
 
 ---
 
-<!-- _class: summary -->
+<!-- Sponsors -->
+
+### Atl Dev Con 2023 Sponsors
+
+![height:550px](./images/conferences/2023-Atl-Dev-Con-Sponsors-Slide-Cropped.png)
+
+---
+
+<!-- Page 1 - Topics -->
+
+<!-- _class: talk_topics -->
 
 ### Topics
 
@@ -30,11 +46,100 @@ footer: 'Andy Lech - The Secret to Mobile'
 
 ---
 
-<!-- _class: title -->
+<!-- Page 2 - Part 1 Title -->
 
-## Part 1
+<!-- _class: section_title -->
 
-* ### Mobile is just like the web but smaller
+### Part 1
+
+* ### Imagine your house was an app ...
+
+---
+
+<!-- Page 3 - House - User -->
+
+<!-- _class: details -->
+
+![bg right:55%](./images/isometric-house-profile-concept/17395.jpg)
+
+<div>
+
+### <i>User Perspective</i>
+
+- Roof: Has One
+- Foundation: Has One
+- Energy Consumption: Just Works
+- Energy Production: Somebody Else's Problem
+- Resiliency: Generator (Maybe?)
+- Focus: Amenities, Location, My Stuff is Here
+
+</div>
+
+<div class="attribution">
+    <a href="https://www.freepik.com/free-vector/isometric-house-profile-concept_4278104.htm">
+    Image by macrovector</a> on Freepik
+</div>
+
+---
+
+<!-- Page 4 - House - Grid -->
+
+<!-- _class: details -->
+
+![bg right:42%](./images/plumbing-problems-solution-isometric-infographic-poster/17767.jpg)
+
+<div>
+
+### <i>Energy Perspective (Power Grid)</i>
+
+- Foundation/Roof: Primary Access
+- Energy Consumption: Always
+- Energy Production: Our Problem
+- Resiliency: Our Backups Have Backups (Hopefully)
+- Focus: Keeping the Lights On (Literally)
+
+</div>
+
+<div class="attribution">
+    <a href="https://www.freepik.com/free-vector/plumbing-problems-solution-isometric-infographic-poster_4283915.htm">
+    Image by macrovector</a> on Freepik
+</div>
+
+---
+
+<!-- Page 5 - House - Solar -->
+
+<!-- _class: details -->
+
+![bg right:45%](./images/isometric-modern-house/ONTOV20.jpg)
+
+<div>
+
+### <i>Energy Perspective (Solar)</i>
+
+- Roof: Primary Access (Solar)
+- Foundation/Roof: Secondary Access (Power Grid)
+- Power Grid Consumption: Backup
+- Power Grid Production: Their Problem
+- Resiliency: Battery, Power Grid
+- Focus: Smartly Converting and Storing What I Get From The Sun
+
+</div>
+
+<div class="attribution">
+    <a href="https://www.freepik.com/free-vector/isometric-modern-house_1086482.htm">
+    Image by macrovector</a> on Freepik
+</div>
+
+---
+
+<!-- Page 6 - Part 2 Title -->
+
+<!-- _class: section_title -->
+
+### Part 2
+
+* ### Mobile is just like Web but smaller
 
 * ### Right!?
 
@@ -46,246 +151,150 @@ footer: 'Andy Lech - The Secret to Mobile'
 
 ---
 
-### Web vs Mobile - High Level View
+<!-- Page 7 - Web vs Mobile - High-level -->
 
-<!-- TODO Define API? Add to slides somewhere? -->
-<!-- TODO Add pictures of browser/site and device/app -->
+### Web vs Mobile - High Level
 
-<div class="mermaid" style="padding: 20px 0px 10px;">
-%%{init: {'theme': 'neutral',
-    'themeVariables': {'labelBackgroundColor': 'transparent'}}}%%
-flowchart LR
-    subgraph Local
-        User <--> Browser
-    end
-    subgraph Remote
-        Site <--> DataSource[Data Source]
-    end
-    Browser <--> Site
-</div>
-
-<div class="mermaid" style="padding: 10px 0px 20px;">
-%%{init: {'theme': 'neutral',
-    'themeVariables': {'labelBackgroundColor': 'transparent'}}}%%
-flowchart LR
-    subgraph Local
-        User <--> App
-    end
-    subgraph Remote
-        API <--> DataSource[Data Source]
-    end
-    App <--> API
-</div>
+![height:250px](./images/website-vs-mobile-high-level.drawio.svg)
 
 <div class="commentary" style="padding: 20px 0px 0px;">
 
-* Same thing, right? Problem solved! Crisis averted!  Thank you and good night!
+* Same thing, right? Problem solved! Crisis averted!
+Thank you and good night!
 
 </div>
 
 ---
+
+<!-- Page 8 - Web vs Mobile - Tech Stack (.NET) -->
 
 <!-- _class: summary -->
 
-### Web vs Mobile - Comparable (.NET)
+### Web vs Mobile - Tech Stacks (.NET)
 
-- Languages: C#, LINQ, VB.NET, F#, etc.
+- Languages: C#, LINQ, F#, VB.NET, etc.
 - Frameworks: .NET, Entity Framework, etc.
-- Data: MSSQL, Azure, etc.
+- Data: SQL Server, Azure, etc.
 - IDEs: Visual Studio, Visual Studio Code, Rider, etc.
-- Tools: ReSharper, etc.
+- Tools: ReSharper, (IDE) Extensions, etc.
 
 </div>
 
 ---
 
-<!-- _class: details -->
-
-### Web Sites (Traditional / SPAs)
-
-<div class="columns">
-
-<div>
-
-##### <i>Browser</i>
-
-- Synchronous Browse, Submit (*)
-- Caching: Browser (Built-in)
-- Resiliency: Browser (Built-in)
-- Focus: Interactivity, Data Updates
-
-</div>
-
-<div>
-
-##### <i>Site (Server/Cloud)</i>
-
-- Site Response: Page (HTML/JS)
-- State Mgmt: Server, Page
-- ORM: Data Source to Server/Cloud
-- Caching: CDN, Server/Cloud
-- Resiliency: Server/Cloud, Services
-- Focus: Layouts, State, Services
-- Data Goal: Fat Data Pipes
-
-</div>
-
-</div>
-
-<div class="detail-summary" style="padding: 20px 0px 0px;">
-
-- (*) Single-page application (SPAs) request HTML like synchronous sites and update their content via API calls but still rely on the browser infrastructure
-
-</div>
-
----
-
-### Web Sites (Traditional / SPAs)
+<!-- Page 9 - Web Sites (Traditional) - Architecture -->
 
 <!-- _class: details -->
 
-<div class="mermaid" style="padding: 20px 0px;">
-%%{init: {'theme': 'neutral',
-    'themeVariables': {'labelBackgroundColor': 'transparent'}}}%%
-stateDiagram
-    direction LR
-    [*] --> Page
-    state Browser_Stack {
-        Page --> Browser
-        Browser --> Page : Cache
-        Browser --> Page
-    }
-    Browser --> Web_Controller
-    state ServerCloud_Stack {
-        Web_Controller --> ORM
-        ORM --> Data
-        Data --> ORM
-        ORM --> Web_Controller
-    }
-    Web_Controller --> Browser : HTML
-</div>
+### Web Sites (Traditional)
+
+![height:250px](./images/website-traditional-high-level.drawio.svg)
 
 <div class="detail-summary">
 
-- The server/cloud stack is the focus, turning data into pages and layouts
-- Complex page layouts are generally built on top of templating frameworks
-- SPAs may modify a page layout, but the initial layout comes from the server
-- Result: web devs expect fat data pipes in the server/cloud stack so they can get large data payloads (object graphs) all at once and choose what to filter
+- Server/cloud stack is the focus here, turning data into pages and layouts
+- Complex layouts are generally built on top of templating frameworks
+- Result: Web devs expect fat data pipes in the server/cloud stack to get large data payloads (object graphs) to choose what to filter/display in page layouts
 
 </div>
 
 ---
+
+<!-- Page 10 - Web Sites (Traditional) - Summary -->
 
 <!-- _class: details -->
 
-### Mobile Apps
+### Web Sites (Traditional)
 
-<div class="columns">
+<div class="two-columns">
 
 <div>
 
-##### <i>App</i>
+#### <i>Browser (Client)</i>
 
-- Asynchronous REST (GET, POST, etc.)
-- State Mgmt: ViewModels, Cache
-- ORM: API to App
-- Caching: Platform, Local DB (Coded)
-- Focus: Interactivity, Data Updates, Layouts, State, API Calls
-- Resiliency: API Calls, Network State
-- Data Goal: Smart Data Pipes
+- Requests: Browse, Submit
+- State Management: Cookies
+- Data Mapping: None
+- Caching: Local, Session, Cookies
+- Resiliency: Browser
+- Development Focus: Interactivity, Data Updates
+- Data Goal: Fat Data Pipes (to Site)
 
 </div>
 
 <div>
 
-##### <i>API (Server/Cloud)</i>
+#### <i>Site (Server/Cloud)</i>
 
-- API Response: JSON/XML (DTO)
-- ORM: Data Source to API
-- Focus: Minimum Data, Status Codes
+- Responses: Page Layouts (Whole)
+- State Management: Server/Cloud
+- Data Mapping: Source to Site
+- Caching: Server/Cloud
 - Resiliency: Server/Cloud, Services
-- Data Goal: Smart Data Pipes
+- Development Focus: Layouts, State, Services
+- Data Goal: Fat Data Pipes (inside Site)
+
+<span class="break" />
 
 </div>
 
 </div>
 
 ---
+
+
+<!-- Page 13 - Mobile Apps - Architecture -->
 
 ### Mobile Apps
 
 <!-- _class: details -->
 
-<div class="mermaid" style="padding: 10px 0px;">
-%%{init: {'theme': 'neutral',
-    'themeVariables': {'labelBackgroundColor': 'transparent'}}}%%
-stateDiagram
-    direction LR
-    [*] --> Page
-    state App_Stack {
-        direction LR
-        Page --> BackEnd
-        BackEnd --> Cache : Cache
-        Cache: Platform
-        Cache: Local DB
-        Cache --> BackEnd : Data?
-        BackEnd --> Page
-    }
-    BackEnd --> Api_Controller
-    state Api_Stack {
-        direction LR
-        Api_Controller --> ORM
-        ORM --> Data
-        Data --> ORM
-        ORM --> Api_Controller
-    }
-    Api_Controller --> BackEnd : JSON
-</div>
+![width:1000px](./images/mobile-apps-high-level.drawio.svg)
 
 <div class="detail-summary">
 
-- The app handles interactivity, page layouts, local caching, and calls to the API
-- The API stack delivers only data or status codes in response to app requests
-- App pages tend to be focused on single tasks so they call the API selectively
+- App handles interactivity, page layouts, local caching, and API calls
+- API stack delivers only data or status codes in response to app requests
+- App pages tend to be focused on single tasks that call the API selectively
 - Result: mobile/API devs focus more on reliable, just-in-time data delivery
 
 </div>
 
 ---
 
+<!-- Page 14 - Mobile Apps - Summary -->
+
 <!-- _class: details -->
 
-### Web vs Mobile - Different Focuses
+### Mobile Apps
 
-<div class="columns">
+<div class="two-columns">
 
 <div>
 
-##### <i>Web Site</i>
+#### <i>App (Client)</i>
 
-- Synchronous Browse, Submit
-- Site Response: Page (HTML/JS)
-- State Mgmt: Server, Page
-- ORM: Data Source to Server/Cloud
-- Client Caching: Browser
-- Focus: Heavy Server/Cloud Services
-- Resiliency: Server/Cloud
-- Data Goal: Fat Data Pipes
+- Requests: API Calls
+- State Management: ViewModels, Cache
+- Data Mapping: API to App
+- Caching: Platform, Local DB
+- Resiliency: Network State
+- Development Focus: Interactivity, Data Updates, Layouts, State, API Calls
+- Data Goal: Smart Data Pipes (to API)
 
 </div>
 
 <div>
 
-##### <i>Mobile App</i>
+#### <i>API (Server/Cloud)</i>
 
-- Asynchronous REST  (GET, POST, etc.)
-- API Response: JSON/XML (DTO)
-- State Mgmt: App, Cache (OS, DB)
-- ORM: Data Source to API, API to App
-- Client Caching: App (Custom or OS)
-- Focus: Light API Consumption
-- Resiliency: API Calls, Server/Cloud
-- Data Goal: Smart Data Pipes
+- Responses: Data (JSON/XML)
+- State Management: Auth Tokens
+- Data Mapping: Source to API
+- Caching: Server/Cloud
+- Resiliency: Server/Cloud, Services
+- Development Focus: Data, Status Codes and Messages
+- Data Goal: Smart Data Pipes (from App)
 
 </div>
 
@@ -293,111 +302,161 @@ stateDiagram
 
 ---
 
-<!-- _class: title -->
+<!-- Page 15 - Part 3 Title -->
 
-## Part 2
+<!-- _class: section_title -->
 
-* ### Imagine your house was an app ...
+### Part 3
+
+* ### "It's the data, stupid"
+
+* ### Insert picture of James Carville
+
+* ### Insert picture of The War Room whiteboard
 
 ---
 
+<!-- Page 16 - API Design - Conference - Schedule -->
+
 <!-- _class: details -->
 
-![bg right:55%](./images/isometric-house-profile-concept/17395.jpg)
+#### API Design - Conference - Schedule
+
+<div class="two-columns" style="padding: 40px 0px;">
 
 <div>
 
-##### <i>User Perspective</i>
+##### <i>Requirements</i>
 
-- Foundation: Has One
-- State Management: Room-to-Room, My Stuff is Here
-- Service Consumption: Just Works
-- Service Production: Somebody Else's Problem
-- Resiliency: Generator (Maybe)
-- Focus: Location, Amenities, Work, School, Bills, Life
+- Everybody gets the same schedule
+- The schedule changes infrequently
+- When the schedule does change, it often involves multiple sessions
+- Event Wi-Fi is notoriously fickle
+
+##### <i>Solution</i>
+
+* Send whole schedule w/o redunant data but time-gated and cached
 
 </div>
-
-<div class="attribution" style="padding-top: 20px;">
-    <a href="https://www.freepik.com/free-vector/isometric-house-profile-concept_4278104.htm">
-    Image by macrovector</a> on Freepik
-</div>
-
----
-
-<!-- _class: details -->
-
-![bg right:40%](./images/plumbing-problems-solution-isometric-infographic-poster/17767.jpg)
 
 <div>
-
-##### <i>Services Perspective (Traditional)</i>
-
-- Foundation: Primary Access
-- State Management: Switches, Knobs, Thermostats, Bill Payments, etc.
-- Service Consumption: Always
-- Service Production: Our Problem
-- Resiliency: Better Have a Backup
-- Focus: Keeping the Lights On ... and Water, Sewer, etc.
-
-</div>
-
-<div class="attribution" style="padding-top: 20px;">
-    <a href="https://www.freepik.com/free-vector/plumbing-problems-solution-isometric-infographic-poster_4283915.htm">
-    Image by macrovector</a> on Freepik
-</div>
-
----
-
-<!-- _class: details -->
-
-![bg right:40%](./images/isometric-modern-house/ONTOV20.jpg)
-
-<div>
-
-##### <i>Services Perspective (Solar)</i>
-
-- Foundation: Secondary Access
-- State Management: Switches, Knobs, Thermostats, Bill Payments, etc.
-- Service Consumption: As Needed
-- Service Production: Their Problem
-- Resiliency: Battery, Power Grid
-- Focus: Providing Electricity when Needed
-
-</div>
-
-<div class="attribution" style="padding-top: 20px;">
-    <a href="https://www.freepik.com/free-vector/isometric-modern-house_1086482.htm">
-    Image by macrovector</a> on Freepik
-</div>
-
----
-
-<!-- _class: details -->
-
-### Mobile Architecture - Highest Level
 
 <div class="mermaid">
 %%{init: {'theme': 'neutral',
     'themeVariables': {'labelBackgroundColor': 'transparent'}}}%%
-stateDiagram
-    direction LR
-    [*] --> Page
-        Page --> BackEnd
-        BackEnd --> Cache : Cache
-        Cache: Platform
-        Cache: Local DB
-        Cache --> BackEnd : Data?
-        BackEnd --> Page : Data
-    BackEnd --> API : Request
-    API --> BackEnd : JSON
+classDiagram
+    Everybody -- Schedule
+    Schedule <.. Timeslots
+    Schedule <.. Sessions
+    Schedule <.. Speakers
+
+</div>
+
 </div>
 
 ---
 
+<!-- Page 17 - API Design - Conference - Itinerary -->
+
 <!-- _class: details -->
 
-### Mobile Architecture - More Detail
+#### API Design - Conference - Itinerary
+
+<div class="two-columns" style="padding: 40px 0px;">
+
+<div>
+
+##### <i>Requirements</i>
+
+- Everybody gets the same schedule
+- Attendee adds sessions to itinerary
+- Attendee shares their itinerary
+- Event Wi-Fi is still fickle
+
+##### <i>Solution</i>
+
+* Send itinerary as updated when network is available, managing sync
+
+</div>
+
+<div>
+
+<div class="mermaid">
+%%{init: {'theme': 'neutral',
+    'themeVariables': {'labelBackgroundColor': 'transparent'}}}%%
+classDiagram
+    Individual -- Calendar
+    Individual -- Schedule
+    Calendar <.. Sessions
+    Schedule <.. Timeslots
+    Schedule <.. Sessions
+    Schedule <.. Speakers
+
+</div>
+
+</div>
+
+---
+
+<!-- Page 18 - API Design - Conference - Announcements -->
+
+<!-- _class: details -->
+
+#### API Design - Conference - Announcements
+
+<div class="two-columns" style="padding: 30px 0px;">
+
+<div>
+
+##### <i>Requirements</i>
+
+- Everybody gets the same schedule
+- Everybody needs to get the same announcements
+- Event Wi-Fi is more fickle now that everybody is checking their phones
+
+##### <i>Solution</i>
+
+* Use a highly-available service
+* Poll API or wait for real-time data
+* Or hope Slack, Twitter, etc. are up
+
+</div>
+
+<div>
+
+<div class="mermaid">
+%%{init: {'theme': 'neutral',
+    'themeVariables': {'labelBackgroundColor': 'transparent'}}}%%
+classDiagram
+    Individual -- Announcements
+    Individual -- Calendar
+    Individual -- Schedule
+    Calendar <.. Sessions
+    Schedule <.. Timeslots
+    Schedule <.. Sessions
+    Schedule <.. Speakers
+
+</div>
+
+</div>
+
+---
+
+<!-- Page 19 - Mobile Architecture - High-Level -->
+
+<!-- _class: details -->
+
+## Mobile Architecture - High Level
+
+![width:1000px](./images/mobile-apps-high-level.drawio.svg)
+
+---
+
+<!-- Page 20 - Mobile Architecture - More Detail -->
+
+<!-- _class: details -->
+
+## Mobile Architecture - More Detail
 
 <div class="mermaid">
 %%{init: {'theme': 'neutral',
@@ -421,9 +480,11 @@ stateDiagram
 
 ---
 
+<!-- Page 21 - Mobile Architecture - Real World -->
+
 <!-- _class: details -->
 
-### Mobile Architecture - Real-world
+## Mobile Architecture - Real-world
 
 <div class="mermaid">
 %%{init: {'theme': 'neutral',
@@ -469,157 +530,29 @@ stateDiagram
 
 ---
 
+<!-- Page 22 - Mobile Architecture - Real World (cont.) -->
+
 <!-- _class: details -->
 
-### Mobile Architecture - Real-world
+## Mobile Architecture - Real-world
 
 <div style="padding: 20px 0px;">
 
 - ViewModels - Moving navigation out of the View allows ViewModels to be tested individually with frameworks like ReactiveUI (RxUI)
-- ApiServices - Individually testable to return app Models and not just DTOs
-- DataService - Decides whether to call the local cache DB, the platform cache, an API endpoint, or a service based on the requested data and the app lifecycle
+- Api Services - Individually testable to return app Models and not just DTOs
+- Data Service - Decides whether to call the local cache DB, the platform cache, an API endpoint, or a service based on the requested data and the app lifecycle
 
 </div>
 
 ---
 
-<!-- _class: title -->
-
-## Part 3
-
-* ### "It's the data, stupid"
-
-* ### Insert picture of James Carville
-
-* ### Insert picture of The War Room whiteboard
-
----
-
-<!-- _class: details -->
-
-#### API Design - Code Camp - Schedule
-
-<div class="columns" style="padding: 40px 0px;">
-
-<div>
-
-##### <i>Requirements</i>
-
-- Everybody gets the same schedule
-- The schedule changes infrequently
-- When the schedule does change, it often involves multiple sessions
-- Event Wi-Fi is notoriously fickle
-
-##### <i>Solution</i>
-
-* Send whole schedule w/o redunant data but time-gated and cached
-
-</div>
-
-<div>
-
-<div class="mermaid">
-%%{init: {'theme': 'neutral',
-    'themeVariables': {'labelBackgroundColor': 'transparent'}}}%%
-classDiagram
-    Everybody -- Schedule
-    Schedule <.. Timeslots
-    Schedule <.. Sessions
-    Schedule <.. Speakers
-
-</div>
-
-</div>
-
----
-
-<!-- _class: details -->
-
-#### API Design - Code Camp - Itinerary
-
-<div class="columns" style="padding: 40px 0px;">
-
-<div>
-
-##### <i>Requirements</i>
-
-- Everybody gets the same schedule
-- Attendee adds sessions to itinerary
-- Attendee shares their itinerary
-- Event Wi-Fi is still fickle
-
-##### <i>Solution</i>
-
-* Send itinerary as updated when network is available, managing sync
-
-</div>
-
-<div>
-
-<div class="mermaid">
-%%{init: {'theme': 'neutral',
-    'themeVariables': {'labelBackgroundColor': 'transparent'}}}%%
-classDiagram
-    Individual -- Calendar
-    Individual -- Schedule
-    Calendar <.. Sessions
-    Schedule <.. Timeslots
-    Schedule <.. Sessions
-    Schedule <.. Speakers
-
-</div>
-
-</div>
-
----
-
-<!-- _class: details -->
-
-#### API Design - Code Camp - Announcements
-
-<div class="columns" style="padding: 30px 0px;">
-
-<div>
-
-##### <i>Requirements</i>
-
-- Everybody gets the same schedule
-- Everybody needs to get the same announcements
-- Event Wi-Fi is more fickle now that everybody is checking their phones
-
-##### <i>Solution</i>
-
-* Use a highly-available service
-* Poll API or wait for real-time data
-* Or hope Slack, Twitter, etc. are up
-
-</div>
-
-<div>
-
-<div class="mermaid">
-%%{init: {'theme': 'neutral',
-    'themeVariables': {'labelBackgroundColor': 'transparent'}}}%%
-classDiagram
-    Individual -- Announcements
-    Individual -- Calendar
-    Individual -- Schedule
-    Calendar <.. Sessions
-    Schedule <.. Timeslots
-    Schedule <.. Sessions
-    Schedule <.. Speakers
-
-</div>
-
-</div>
-
----
+<!-- Page 23 - API Design + App Design - Other Things -->
 
 <!-- _class: details -->
 
 #### API Design + App Design - Other Things
 
-<div class="columns" style="padding: 30px 0px;">
+<div class="two-columns" style="padding: 30px 0px;">
 
 <div>
 
@@ -658,7 +591,9 @@ classDiagram
 
 ---
 
-<!-- _class: title -->
+<!-- Page 24 - Part 4 Title -->
+
+<!-- _class: section_title -->
 
 ## Part 4
 
@@ -668,9 +603,11 @@ classDiagram
 
 ---
 
+<!-- Page 25 - ProblemDetails -->
+
 <!-- _class: details -->
 
-<div class="columns" style="padding: 30px 0px;">
+<div class="two-columns" style="padding: 30px 0px;">
 
 <div>
 
@@ -740,11 +677,15 @@ further information if dereferenced."
 
 ---
 
+<!-- Page 26 - Demo - ProblemReports (PdHelpers) -->
+
 <!-- _class: details -->
 
 ### Demo - ProblemReports (PdHelpers)
 
 ---
+
+<!-- Page 27 - Questions? -->
 
 <!-- _class: title -->
 

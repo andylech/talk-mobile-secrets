@@ -1,43 +1,48 @@
 /* @theme custom */
 
+/* Magic of step-through is "*" bullet points (w/ "list-style-type: none;") */
+
 @import 'uncover';
 
-/* Fonts */
-
 @font-face {
-  font-family: Permanent_Marker;
-  src: url('fonts\Google Fonts\Permanent_Marker\PermanentMarker-Regular.ttf');
+  font-family: Martel_Sans_Bold;
+  src: url('../fonts/Google Fonts/Martel_Sans/MartelSans-Bold.ttf');
   font-weight: regular;
 }
 
 @font-face {
-  font-family: Roboto_Slab;
-  src: url('fonts\Google Fonts\Roboto_Slab\RobotoSlab-VariableFont_wght.ttf');
+  font-family: Pangolin;
+  src: url('../fonts/Google Fonts/Pangolin/Pangolin-Regular.ttf');
+  font-weight: regular;
 }
 
 div.attribution {
   font-size: 16px;
+  padding-top: 24px;
 }
 
-div.commentary ul {
-  font-size: 24px;
-}
-
+div.commentary ul,
 div.detail-summary {
   font-size: 24px;
-  font-weight: 600;
+  list-style-type: none;
+  text-align: center;
 }
 
-h1 {
-  font-size: 76px;
+div.three-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
 }
 
-h2 {
-  font-size: 60px;
+div.two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
 }
 
-li {
-  font-weight: 600;
+section {
+  /* font-family: Martel_Sans_Regular; */
+  font-family: Martel_Sans_Bold;
 }
 
 section.details ul li {
@@ -46,103 +51,65 @@ section.details ul li {
 
 section.commentary ul,
 section.details ul li {
-  font-size: 24px;
+  font-size: 20px;
 }
 
-section.handwriting {
-  font-family: Permanent_Marker, cursive;
-  font-weight: 100;
+section h2 {
+  font-size: 60px;
 }
 
-section.summary ul li,
-section.title ul li {
-  line-height: 1.75em;
+section h3 {
+  font-size: 48px;
 }
 
-section.title {
-  /* font-family: Roboto_Slab; */
-  font-family: cursive;
+section.section_title h2
+{
+  font-size: 60px;
+  line-height: 1em;
 }
 
-section.title h2 {
-  font-weight: 900;
+section.section_title h3 {
+  font-size: 48px;
+  line-height: 1.25em;
 }
 
-section.title ul h3,
-section.title ul h4 {
-  /*
-  font-family: Roboto_Slab;
-  font-size: 40px;
-  */
-
-  font-family: cursive;
-  font-size: 44px;
+section.section_title h4 {
+  font-size: 36px;
+  line-height: 1.5em;
 }
 
-
-/* Layout */
-
-.columns {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.columns3 {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-section.title ul h3, h4 {
+section.section_title,
+section.section_title ul li {
+  font-family: Pangolin, cursive;
   text-align: center;
 }
 
-/* Step-through */
-
-/* Magic of step-through bullet points is "list-style-type: none;" and "*" bullets */
-
-div.commentary ul {
+section.section_title ul li {
   list-style-type: none;
 }
 
-section.title ul {
-  list-style-type: none;
+section.summary ul li {
+  font-size: 36px;
+  line-height: 1.75em;
 }
 
-/* Mermaid */
+section.talk_title h1 {
+  font-size: 76px;
+  line-height: 1.75em;
+}
 
-/* TODO Way to apply Mermaid theme in CSS? Or way to centralize theme? */
+section.talk_title h2,
+section.talk_title ul li {
+  font-size: 60px;
+  line-height: 1.75em;
+}
 
-.mermaid {
-  font-size: 10px;
+section.talk_topics ul li {
+  font-size: 36px;
   line-height: 2em;
 }
 
-svg[id^="mermaid-"] {
-  min-width: 480px;
-  min-height: 160px;
+/* HACK */
+span.break {
+  line-height: 2em;
 }
-
-/*
-%%{init: {'theme': 'neutral', 'themeVariables': { 'fontSize': '200%' }}}%%
-*/
-
-/* svg[id^="mermaid-"] {
-  min-width: 480px;
-  max-width: 960px;
-  min-height: 360px;
-  max-height: 600px;
-}
-*/
-/*
-svg[id^="mermaid-"] {
-  min-width: 1080px;
-  width: 1080px;
-  min-height: 180px;
-  height: 180px;
-} */
-
-/* div.LR {
-  min-width: 960px;
-} */
