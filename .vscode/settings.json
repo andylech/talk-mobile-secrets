@@ -8,5 +8,13 @@
         "./themes/custom.css"
     ],
     "markdown.marp.enableHtml": true,
-    "markdown.marp.exportType": "html"
+    "markdown.marp.exportType": "html",
+    "cSpell.words": [
+        "Architecting",
+        "devs",
+        "Idempotency",
+        "LINQ",
+        "templating",
+        "Timeslots"
+    ]
 }

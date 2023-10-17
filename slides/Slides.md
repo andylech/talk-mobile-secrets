@@ -27,26 +27,26 @@ paginate: true
 
 <!-- Sponsors -->
 
-### Atl Dev Con 2023 Sponsors
+<!-- ###
 
-![height:550px](./images/conferences/2023-Atl-Dev-Con-Sponsors-Slide-Cropped.png)
+![height:550px](./images/conferences)
 
----
+--- -->
 
-<!-- Page 1 - Topics -->
+<!-- Page 0 - Topics -->
 
 <!-- _class: talk_topics -->
 
 ### Topics
 
 - Infrastructure differences between Web and Mobile
-- Architecturing your Mobile app for better results
+- Architecting your Mobile app for better results
 - Making better data decisions for your Mobile app
 - Replacing exceptions with extensible error models
 
 ---
 
-<!-- Page 2 - Part 1 Title -->
+<!-- Page 1 - Title -->
 
 <!-- _class: section_title -->
 
@@ -56,7 +56,7 @@ paginate: true
 
 ---
 
-<!-- Page 3 - House - User -->
+<!-- Page 1 - House - User -->
 
 <!-- _class: details -->
 
@@ -64,10 +64,8 @@ paginate: true
 
 <div>
 
-### <i>User Perspective</i>
+### User Perspective
 
-- Roof: Has One
-- Foundation: Has One
 - Energy Consumption: Just Works
 - Energy Production: Somebody Else's Problem
 - Resiliency: Generator (Maybe?)
@@ -82,7 +80,7 @@ paginate: true
 
 ---
 
-<!-- Page 4 - House - Grid -->
+<!-- Page 1 - House - Grid -->
 
 <!-- _class: details -->
 
@@ -90,9 +88,8 @@ paginate: true
 
 <div>
 
-### <i>Energy Perspective (Power Grid)</i>
+### Energy Perspective (Power Grid)
 
-- Foundation/Roof: Primary Access
 - Energy Consumption: Always
 - Energy Production: Our Problem
 - Resiliency: Our Backups Have Backups (Hopefully)
@@ -107,7 +104,7 @@ paginate: true
 
 ---
 
-<!-- Page 5 - House - Solar -->
+<!-- Page 1 - House - Solar -->
 
 <!-- _class: details -->
 
@@ -115,10 +112,8 @@ paginate: true
 
 <div>
 
-### <i>Energy Perspective (Solar)</i>
+### Energy Perspective (Solar)
 
-- Roof: Primary Access (Solar)
-- Foundation/Roof: Secondary Access (Power Grid)
 - Power Grid Consumption: Backup
 - Power Grid Production: Their Problem
 - Resiliency: Battery, Power Grid
@@ -133,7 +128,7 @@ paginate: true
 
 ---
 
-<!-- Page 6 - Part 2 Title -->
+<!-- Page 2 - Title -->
 
 <!-- _class: section_title -->
 
@@ -188,7 +183,7 @@ Thank you and good night!
 
 ### Web Sites (Traditional)
 
-![height:250px](./images/website-traditional-high-level.drawio.svg)
+![width:1100px](./images/website-traditional-high-level.drawio.svg)
 
 <div class="detail-summary">
 
@@ -242,14 +237,13 @@ Thank you and good night!
 
 ---
 
-
 <!-- Page 13 - Mobile Apps - Architecture -->
 
 ### Mobile Apps
 
 <!-- _class: details -->
 
-![width:1000px](./images/mobile-apps-high-level.drawio.svg)
+![width:1100px](./images/mobile-apps-high-level.drawio.svg)
 
 <div class="detail-summary">
 
@@ -335,7 +329,7 @@ Thank you and good night!
 
 ##### <i>Solution</i>
 
-* Send whole schedule w/o redunant data but time-gated and cached
+* Send whole schedule w/o redundant data but time-gated and cached
 
 </div>
 
@@ -448,89 +442,13 @@ classDiagram
 
 ## Mobile Architecture - High Level
 
-![width:1000px](./images/mobile-apps-high-level.drawio.svg)
+<br />
+
+![width:1100px](./images/mobile-apps-high-level.drawio.svg)
 
 ---
 
-<!-- Page 20 - Mobile Architecture - More Detail -->
-
-<!-- _class: details -->
-
-## Mobile Architecture - More Detail
-
-<div class="mermaid">
-%%{init: {'theme': 'neutral',
-    'themeVariables': {'labelBackgroundColor': 'transparent'}}}%%
-stateDiagram
-    direction LR
-    [*] --> Page
-    Page --> ViewModels : Binding
-    ViewModels: ViewModel_1
-    ViewModels: ViewModel_2
-    ViewModels --> Cache : Cache
-    Cache: Platform
-    Cache: Local DB
-    Cache --> ViewModels : Data?
-    ViewModels --> Page : Model
-    ViewModels --> API : Request
-    API --> ViewModels : JSON
-    API: API_1
-    API: API_2
-</div>
-
----
-
-<!-- Page 21 - Mobile Architecture - Real World -->
-
-<!-- _class: details -->
-
-## Mobile Architecture - Real-world
-
-<div class="mermaid">
-%%{init: {'theme': 'neutral',
-    'themeVariables': {'labelBackgroundColor': 'transparent'}}}%%
-stateDiagram
-    direction LR
-    [*] --> Page
-    state App_Stack_1 {
-        Page --> ViewModels
-        ViewModels --> DataService
-        ViewModels: ViewModel_1
-        ViewModels: ViewModel_2
-        DataService --> Cache: Cache
-        Cache: Platform
-        Cache: Local DB
-        Cache --> DataService : Data?
-        DataService --> ApiService
-        ApiService: ApiService_1
-        ApiService: ApiService_2
-        ApiService --> DataService : Model
-        DataService --> ViewModels : Model
-        ViewModels --> Page : Properties
-    }
-</div>
-
-<div class="mermaid">
-%%{init: {'theme': 'neutral',
-    'themeVariables': {'labelBackgroundColor': 'transparent'}}}%%
-stateDiagram
-    direction LR
-    state App_Stack_2 {
-        direction LR
-        ApiTester_1 --> ApiService_1
-        ApiService_1 --> ApiTester_1 : Models
-        ApiTester_2 --> ApiService_2
-        ApiService_2 --> ApiTester_2 : Models
-    }
-    ApiService_1 --> Api_1
-    Api_1 --> ApiService_1
-    ApiService_2 --> Api_2
-    Api_2 --> ApiService_2
-</div>
-
----
-
-<!-- Page 22 - Mobile Architecture - Real World (cont.) -->
+<!-- Page 21 - Mobile Architecture - Real World (cont.) -->
 
 <!-- _class: details -->
 
@@ -539,10 +457,22 @@ stateDiagram
 <div style="padding: 20px 0px;">
 
 - ViewModels - Moving navigation out of the View allows ViewModels to be tested individually with frameworks like ReactiveUI (RxUI)
-- Api Services - Individually testable to return app Models and not just DTOs
+- Api Services - Individually testable to return app Models and not just Data Transfer Objects (DTOs)
 - Data Service - Decides whether to call the local cache DB, the platform cache, an API endpoint, or a service based on the requested data and the app lifecycle
 
 </div>
+
+---
+
+<!-- Page 22 - Mobile Architecture - Real World -->
+
+<!-- _class: details -->
+
+## Mobile Architecture - Real-world
+
+<br />
+
+![width:1100px](./images/mobile-apps-real-world.drawio.svg)
 
 ---
 
