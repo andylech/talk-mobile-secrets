@@ -615,13 +615,11 @@ further information if dereferenced."
 
 </div>
 
----
-
 <!-- Page 26 - Demo - ProblemReports (PdHelpers) -->
 
-<!-- _class: details -->
+<!-- # _class: details -->
 
-### Demo - ProblemReports (PdHelpers)
+<!-- ### Demo - ProblemReports (PdHelpers) -->
 
 ---
 
