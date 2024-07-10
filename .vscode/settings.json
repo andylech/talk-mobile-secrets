@@ -14,6 +14,7 @@
         "devs",
         "Idempotency",
         "LINQ",
+        "marp",
         "templating",
         "Timeslots"
     ]

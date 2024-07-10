@@ -335,6 +335,7 @@ Thank you and good night!
 
 <div>
 
+<!--
 <div class="mermaid">
 %%{init: {'theme': 'neutral',
     'themeVariables': {'labelBackgroundColor': 'transparent'}}}%%
@@ -345,6 +346,9 @@ classDiagram
     Schedule <.. Speakers
 
 </div>
+-->
+
+![height:400px](./images/api-design-conference-schedule.drawio.svg)
 
 </div>
 
@@ -375,6 +379,7 @@ classDiagram
 
 <div>
 
+<!--
 <div class="mermaid">
 %%{init: {'theme': 'neutral',
     'themeVariables': {'labelBackgroundColor': 'transparent'}}}%%
@@ -387,6 +392,9 @@ classDiagram
     Schedule <.. Speakers
 
 </div>
+-->
+
+![height:400px](./images/api-design-conference-itinerary.drawio.svg)
 
 </div>
 
@@ -418,7 +426,7 @@ classDiagram
 
 <div>
 
-<div class="mermaid">
+<!-- <div class="mermaid">
 %%{init: {'theme': 'neutral',
     'themeVariables': {'labelBackgroundColor': 'transparent'}}}%%
 classDiagram
@@ -430,7 +438,9 @@ classDiagram
     Schedule <.. Sessions
     Schedule <.. Speakers
 
-</div>
+</div> -->
+
+![height:400px](./images/api-design-conference-announcements.drawio.svg)
 
 </div>
 
