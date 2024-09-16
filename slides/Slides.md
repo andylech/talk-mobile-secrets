@@ -50,7 +50,7 @@ paginate: true
 
 <!-- _class: section_title -->
 
-### Part 1
+## Part 1
 
 * ### Imagine your house was an app ...
 
@@ -64,12 +64,18 @@ paginate: true
 
 <div>
 
-### User Perspective
+### Energy - User
 
-- Energy Consumption: Just Works
-- Energy Production: Somebody Else's Problem
-- Resiliency: Generator (Maybe?)
-- Focus: Amenities, Location, My Stuff is Here
+##### *[Web Site, SPA, or Mobile User]*
+
+- Energy Consumption
+  - Just Works
+- Energy Production
+  - Somebody Else's Problem
+- Resiliency
+  - Generator (Maybe?)
+- <b>Focus</b>
+  - <b>Living My Best Life</b>
 
 </div>
 
@@ -88,18 +94,26 @@ paginate: true
 
 <div>
 
-### Energy Perspective (Power Grid)
+### Energy - Power Grid
 
-- Energy Consumption: Always
-- Energy Production: Our Problem
-- Resiliency: Our Backups Have Backups (Hopefully)
-- Focus: Keeping the Lights On (Literally)
+##### *[Web Site or (Single Page Application) SPA]*
+
+- User Consumption
+  - Always
+- Grid Production
+  - Our Problem
+- Resiliency
+  - Our Backups Have Backups (Hopefully)
+- <b>Focus</b>
+  - <b>Keeping the Lights On (Literally)</b>
 
 </div>
 
 <div class="attribution">
     <a href="https://www.freepik.com/free-vector/plumbing-problems-solution-isometric-infographic-poster_4283915.htm">
     Image by macrovector</a> on Freepik
+    <br />
+    <i>[Equivalent energy image not available]</i>
 </div>
 
 ---
@@ -112,12 +126,20 @@ paginate: true
 
 <div>
 
-### Energy Perspective (Solar)
+### Energy - Solar/Wind
 
-- Power Grid Consumption: Backup
-- Power Grid Production: Their Problem
-- Resiliency: Battery, Power Grid
-- Focus: Smartly Converting and Storing What I Get From The Sun
+###### *[Mobile App]*
+
+- Energy Production
+  - Local
+- Grid Consumption
+  - Backup
+- Grid Production
+  - Their Problem
+- Resiliency
+  - Battery, Power Grid
+- <b>Focus</b>
+  - <b>Smartly Using and Storing Energy</b>
 
 </div>
 
@@ -132,13 +154,13 @@ paginate: true
 
 <!-- _class: section_title -->
 
-### Part 2
+## Part 2
 
-* ### Mobile is just like Web but smaller
+* ### Mobile is just like Web but smaller,
 
-* ### Right!?
+* ### right!?
 
-* #### or
+* ### or
 
 * ### Web devs make bad Mobile devs
 
@@ -147,6 +169,8 @@ paginate: true
 ---
 
 <!-- Page 7 - Web vs Mobile - High-level -->
+
+<!-- _class: details -->
 
 ### Web vs Mobile - High Level
 
@@ -183,13 +207,15 @@ Thank you and good night!
 
 ### Web Sites (Traditional)
 
+<p/>
+
 ![width:1100px](./images/website-traditional-high-level.drawio.svg)
 
 <div class="detail-summary">
 
 - Server/cloud stack is the focus here, turning data into pages and layouts
 - Complex layouts are generally built on top of templating frameworks
-- Result: Web devs expect fat data pipes in the server/cloud stack to get large data payloads (object graphs) to choose what to filter/display in page layouts
+- <b>Web devs expect fat data pipes in the server/cloud stack to get large data payloads (object graphs) to choose what to filter/display in page layouts</b>
 
 </div>
 
@@ -205,29 +231,29 @@ Thank you and good night!
 
 <div>
 
-#### <i>Browser (Client)</i>
+#### *Browser (Client)*
 
 - Requests: Browse, Submit
 - State Management: Cookies
 - Data Mapping: None
 - Caching: Local, Session, Cookies
 - Resiliency: Browser
-- Development Focus: Interactivity, Data Updates
-- Data Goal: Fat Data Pipes (to Site)
+- <b>Dev Focus: Interactivity, Data Updates</b>
+- <b>Data Goal: Fat Data Pipes (to Site)</b>
 
 </div>
 
 <div>
 
-#### <i>Site (Server/Cloud)</i>
+#### *Site (Server/Cloud)*
 
 - Responses: Page Layouts (Whole)
 - State Management: Server/Cloud
 - Data Mapping: Source to Site
 - Caching: Server/Cloud
 - Resiliency: Server/Cloud, Services
-- Development Focus: Layouts, State, Services
-- Data Goal: Fat Data Pipes (inside Site)
+- <b>Dev Focus: Layouts, State, Services</b>
+- <b>Data Goal: Fat Data Pipes (inside Site)</b>
 
 <span class="break" />
 
@@ -250,7 +276,7 @@ Thank you and good night!
 - App handles interactivity, page layouts, local caching, and API calls
 - API stack delivers only data or status codes in response to app requests
 - App pages tend to be focused on single tasks that call the API selectively
-- Result: mobile/API devs focus more on reliable, just-in-time data delivery
+- <b>Mobile/API devs focus more on reliable, just-in-time data delivery</b>
 
 </div>
 
@@ -266,29 +292,29 @@ Thank you and good night!
 
 <div>
 
-#### <i>App (Client)</i>
+#### *App (Client)*
 
 - Requests: API Calls
 - State Management: ViewModels, Cache
 - Data Mapping: API to App
 - Caching: Platform, Local DB
 - Resiliency: Network State
-- Development Focus: Interactivity, Data Updates, Layouts, State, API Calls
-- Data Goal: Smart Data Pipes (to API)
+- <b>Dev Focus: Interactivity, Data Updates, Layouts, State, API Calls</b>
+- <b>Data Goal: Smart Data Pipes (to API)</b>
 
 </div>
 
 <div>
 
-#### <i>API (Server/Cloud)</i>
+#### *API (Server/Cloud)*
 
 - Responses: Data (JSON/XML)
 - State Management: Auth Tokens
 - Data Mapping: Source to API
 - Caching: Server/Cloud
 - Resiliency: Server/Cloud, Services
-- Development Focus: Data, Status Codes and Messages
-- Data Goal: Smart Data Pipes (from App)
+- <b>Dev Focus: Data, Status Codes, Messages</b>
+- <b>Data Goal: Smart Data Pipes (from App)</b>
 
 </div>
 
@@ -300,7 +326,7 @@ Thank you and good night!
 
 <!-- _class: section_title -->
 
-### Part 3
+## Part 3
 
 * ### "It's the data, stupid"
 
@@ -320,14 +346,16 @@ Thank you and good night!
 
 <div>
 
-##### <i>Requirements</i>
+##### *Requirements*
 
 - Everybody gets the same schedule
 - The schedule changes infrequently
 - When the schedule does change, it often involves multiple sessions
 - Event Wi-Fi is notoriously fickle
 
-##### <i>Solution</i>
+<br />
+
+##### *Solution*
 
 * Send whole schedule w/o redundant data but time-gated and cached
 
@@ -364,14 +392,16 @@ classDiagram
 
 <div>
 
-##### <i>Requirements</i>
+##### *Requirements*
 
 - Everybody gets the same schedule
 - Attendee adds sessions to itinerary
 - Attendee shares their itinerary
 - Event Wi-Fi is still fickle
 
-##### <i>Solution</i>
+<br />
+
+##### *Solution*
 
 * Send itinerary as updated when network is available, managing sync
 
@@ -410,13 +440,15 @@ classDiagram
 
 <div>
 
-##### <i>Requirements</i>
+##### *Requirements*
 
 - Everybody gets the same schedule
 - Everybody needs to get the same announcements
 - Event Wi-Fi is more fickle now that everybody is checking their phones
 
-##### <i>Solution</i>
+<br />
+
+##### *Solution*
 
 * Use a highly-available service
 * Poll API or wait for real-time data
@@ -466,9 +498,12 @@ classDiagram
 
 <div style="padding: 20px 0px;">
 
-- ViewModels - Moving navigation out of the View allows ViewModels to be tested individually with frameworks like ReactiveUI (RxUI)
-- Api Services - Individually testable to return app Models and not just Data Transfer Objects (DTOs)
-- Data Service - Decides whether to call the local cache DB, the platform cache, an API endpoint, or a service based on the requested data and the app lifecycle
+- ViewModels
+  - Moving navigation out of the View allows ViewModels to be tested individually with frameworks like ReactiveUI (RxUI)
+- Api Services
+  - Individually testable to return app Models and not just Data Transfer Objects (DTOs)
+- Data Service
+  - Decides whether to call the local cache DB, the platform cache, an API endpoint, or a service based on the requested data and the app lifecycle
 
 </div>
 
@@ -496,7 +531,7 @@ classDiagram
 
 <div>
 
-##### <i>App Design</i>
+##### *App Design*
 
 - Centralized analytics
 - Centralized logging
@@ -509,7 +544,7 @@ classDiagram
 
 <div>
 
-##### <i>API Design</i>
+##### *API Design*
 
 - Authorization tokens
 - Refresh tokens
@@ -523,9 +558,10 @@ classDiagram
 
 </div>
 
-<div class="detail-summary" style="padding: 20px 0px 0px;">
+<div class="detail-summary"
+    style="padding: 1en 0px 0px !important; align: center !important;">
 
-- And so much more
+And so much more
 
 </div>
 
@@ -539,7 +575,7 @@ classDiagram
 
 * ### Explain yourself, dammit
 
-* ### Picture of Lewis Black
+* ### Insert picture of Lewis Black
 
 ---
 
@@ -553,7 +589,7 @@ classDiagram
 
 #### ProblemDetails
 
-##### <i>Pros</i>
+##### *Pros*
 
 - Extensible JSON object
 - Provides context to status code
@@ -561,7 +597,7 @@ classDiagram
 - Supported in .NET without ASP.NET
 - Returned by Refit's ApiException
 
-##### <i>Cons</i>
+##### *Cons*
 
 - Buggy in ASP.NET (still)
 - .NET implementations follow JSON
@@ -630,11 +666,3 @@ further information if dereferenced."
 ## Part 5
 
 ### Questions?
-
-<!-- Put this script at the end of Markdown file. -->
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.3.1/dist/mermaid.esm.min.mjs';
-mermaid.initialize({ startOnLoad: true });
-
-window.addEventListener('vscode.markdown.updateContent', function() { mermaid.init() });
-</script>
