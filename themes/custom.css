@@ -5,8 +5,14 @@
 @import 'uncover';
 
 @font-face {
-  font-family: Martel_Sans_Bold;
-  src: url('../fonts/Google Fonts/Martel_Sans/MartelSans-Bold.ttf');
+  font-family: Biryani_ExtraBold;
+  src: url('../fonts/Google Fonts/Biryani/Biryani-ExtraBold.ttf');
+  font-weight: regular;
+}
+
+@font-face {
+  font-family: Biryani_SemiBold;
+  src: url('../fonts/Google Fonts/Biryani/Biryani-SemiBold.ttf');
   font-weight: regular;
 }
 
@@ -41,36 +47,15 @@ div.two-columns {
 }
 
 section {
-  /* font-family: Martel_Sans_Regular; */
-  font-family: Martel_Sans_Bold;
+  font-family: Biryani_SemiBold;
 }
 
 section.details ul li {
   line-height: 1.5em;
 }
 
-section.commentary ul,
-section.details ul li {
-  font-size: 20px;
-}
-
-section h2 {
-  font-size: 60px;
-}
-
-section h3 {
-  font-size: 48px;
-}
-
-section.section_title h2
-{
-  font-size: 60px;
-  line-height: 1em;
-}
-
-section.section_title h3 {
-  font-size: 48px;
-  line-height: 1.25em;
+section.details ul li b {
+  font-family: Biryani_ExtraBold;
 }
 
 section.section_title h4 {
