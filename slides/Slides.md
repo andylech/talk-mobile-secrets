@@ -108,7 +108,7 @@ paginate: true
 
 <!-- _class: details -->
 
-![bg right:45%](./images/isometric-modern-house/ONTOV20.jpg)
+![bg right:48%](./images/smart-home-energy-generation-isometric-poster/16696.jpg)
 
 <div>
 
