@@ -363,19 +363,6 @@ Thank you and good night!
 
 <div>
 
-<!--
-<div class="mermaid">
-%%{init: {'theme': 'neutral',
-    'themeVariables': {'labelBackgroundColor': 'transparent'}}}%%
-classDiagram
-    Everybody -- Schedule
-    Schedule <.. Timeslots
-    Schedule <.. Sessions
-    Schedule <.. Speakers
-
-</div>
--->
-
 ![height:400px](./images/api-design-conference-schedule.drawio.svg)
 
 </div>
@@ -408,21 +395,6 @@ classDiagram
 </div>
 
 <div>
-
-<!--
-<div class="mermaid">
-%%{init: {'theme': 'neutral',
-    'themeVariables': {'labelBackgroundColor': 'transparent'}}}%%
-classDiagram
-    Individual -- Calendar
-    Individual -- Schedule
-    Calendar <.. Sessions
-    Schedule <.. Timeslots
-    Schedule <.. Sessions
-    Schedule <.. Speakers
-
-</div>
--->
 
 ![height:400px](./images/api-design-conference-itinerary.drawio.svg)
 
@@ -457,20 +429,6 @@ classDiagram
 </div>
 
 <div>
-
-<!-- <div class="mermaid">
-%%{init: {'theme': 'neutral',
-    'themeVariables': {'labelBackgroundColor': 'transparent'}}}%%
-classDiagram
-    Individual -- Announcements
-    Individual -- Calendar
-    Individual -- Schedule
-    Calendar <.. Sessions
-    Schedule <.. Timeslots
-    Schedule <.. Sessions
-    Schedule <.. Speakers
-
-</div> -->
 
 ![height:400px](./images/api-design-conference-announcements.drawio.svg)
 
