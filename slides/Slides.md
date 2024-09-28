@@ -33,7 +33,7 @@ paginate: true
 
 --- -->
 
-<!-- Page 0 - Topics -->
+<!-- @@@ Topics @@@ -->
 
 <!-- _class: talk_topics -->
 
@@ -46,7 +46,7 @@ paginate: true
 
 ---
 
-<!-- Page 1 - Title -->
+<!-- @@@ Title @@@ -->
 
 <!-- _class: section_title -->
 
@@ -56,7 +56,7 @@ paginate: true
 
 ---
 
-<!-- Page 1 - House - User -->
+<!-- @@@ House - User @@@ -->
 
 <!-- _class: details -->
 
@@ -86,7 +86,7 @@ paginate: true
 
 ---
 
-<!-- Page 1 - House - Grid -->
+<!-- @@@ House - Grid @@@ -->
 
 <!-- _class: details -->
 
@@ -118,7 +118,7 @@ paginate: true
 
 ---
 
-<!-- Page 1 - House - Solar -->
+<!-- @@@ House - Solar @@@ -->
 
 <!-- _class: details -->
 
@@ -150,7 +150,7 @@ paginate: true
 
 ---
 
-<!-- Page 2 - Title -->
+<!-- @@@ Title @@@ -->
 
 <!-- _class: section_title -->
 
@@ -168,7 +168,7 @@ paginate: true
 
 ---
 
-<!-- Page 7 - Web vs Mobile - High-level -->
+<!-- @@@ Web vs Mobile - High-level @@@ -->
 
 <!-- _class: details -->
 
@@ -185,7 +185,7 @@ Thank you and good night!
 
 ---
 
-<!-- Page 8 - Web vs Mobile - Tech Stack (.NET) -->
+<!-- @@@ Web vs Mobile - Tech Stack (.NET) @@@ -->
 
 <!-- _class: summary -->
 
@@ -201,7 +201,7 @@ Thank you and good night!
 
 ---
 
-<!-- Page 9 - Web Sites (Traditional) - Architecture -->
+<!-- @@@ Web Sites (Traditional) - Architecture @@@ -->
 
 <!-- _class: details -->
 
@@ -221,7 +221,7 @@ Thank you and good night!
 
 ---
 
-<!-- Page 10 - Web Sites (Traditional) - Summary -->
+<!-- @@@ Web Sites (Traditional) @@@ -->
 
 <!-- _class: details -->
 
@@ -263,7 +263,7 @@ Thank you and good night!
 
 ---
 
-<!-- Page 13 - Mobile Apps - Architecture -->
+<!-- @@@ Mobile Apps - Architecture @@@ -->
 
 ### Mobile Apps
 
@@ -282,7 +282,7 @@ Thank you and good night!
 
 ---
 
-<!-- Page 14 - Mobile Apps - Summary -->
+<!-- @@@ Mobile Apps - Summary @@@ -->
 
 <!-- _class: details -->
 
@@ -322,7 +322,7 @@ Thank you and good night!
 
 ---
 
-<!-- Page 15 - Part 3 Title -->
+<!-- @@@ Part 3 Title @@@ -->
 
 <!-- _class: section_title -->
 
@@ -336,7 +336,7 @@ Thank you and good night!
 
 ---
 
-<!-- Page 16 - API Design - Conference - Schedule -->
+<!-- @@@ API Design - Conference - Schedule @@@ -->
 
 <!-- _class: details -->
 
@@ -369,7 +369,7 @@ Thank you and good night!
 
 ---
 
-<!-- Page 17 - API Design - Conference - Itinerary -->
+<!-- @@@ API Design - Conference - Itinerary @@@ -->
 
 <!-- _class: details -->
 
@@ -402,7 +402,7 @@ Thank you and good night!
 
 ---
 
-<!-- Page 18 - API Design - Conference - Announcements -->
+<!-- @@@ API Design - Conference - Announcements @@@ -->
 
 <!-- _class: details -->
 
@@ -436,7 +436,7 @@ Thank you and good night!
 
 ---
 
-<!-- Page 19 - Mobile Architecture - High-Level -->
+<!-- @@@ Mobile Architecture - High-Level @@@ -->
 
 <!-- _class: details -->
 
@@ -448,7 +448,7 @@ Thank you and good night!
 
 ---
 
-<!-- Page 21 - Mobile Architecture - Real World (cont.) -->
+<!-- @@@ Mobile Architecture - Real World (cont.) @@@ -->
 
 <!-- _class: details -->
 
@@ -467,7 +467,7 @@ Thank you and good night!
 
 ---
 
-<!-- Page 22 - Mobile Architecture - Real World -->
+<!-- @@@ Mobile Architecture - Real World @@@ -->
 
 <!-- _class: details -->
 
@@ -479,7 +479,7 @@ Thank you and good night!
 
 ---
 
-<!-- Page 23 - API Design + App Design - Other Things -->
+<!-- @@@ API Design + App Design - Other Things @@@ -->
 
 <!-- _class: details -->
 
@@ -525,7 +525,7 @@ And so much more
 
 ---
 
-<!-- Page 24 - Part 4 Title -->
+<!-- @@@ Part 4 Title @@@ -->
 
 <!-- _class: section_title -->
 
@@ -537,7 +537,7 @@ And so much more
 
 ---
 
-<!-- Page 25 - ProblemDetails -->
+<!-- @@@ ProblemDetails @@@ -->
 
 <!-- _class: details -->
 
@@ -609,7 +609,7 @@ further information if dereferenced."
 
 </div>
 
-<!-- Page 26 - Demo - ProblemReports (PdHelpers) -->
+<!-- @@@ Demo - ProblemReports (PdHelpers) @@@ -->
 
 <!-- # _class: details -->
 
@@ -617,7 +617,7 @@ further information if dereferenced."
 
 ---
 
-<!-- Page 27 - Questions? -->
+<!-- @@@ Questions? @@@ -->
 
 <!-- _class: title -->
 
