@@ -330,9 +330,9 @@ Thank you and good night!
 
 * ### "It's the data, stupid"
 
-* ### Insert picture of James Carville
+* ### [Insert picture of James Carville]
 
-* ### Insert picture of The War Room whiteboard
+* ### [Insert picture of The War Room whiteboard]
 
 ---
 
@@ -533,7 +533,7 @@ And so much more
 
 * ### Explain yourself, dammit
 
-* ### Insert picture of Lewis Black
+* ### [Insert picture of Lewis Black]
 
 ---
 
