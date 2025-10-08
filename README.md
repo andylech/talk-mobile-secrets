@@ -1,3 +1,5 @@
+**[2025-10-08] This repo is archived. The updated version of this talk is here: [@andylech/talk-mobile-and-apis-for-web-devs](https://github.com/andylech/talk-mobile-and-apis-for-web-devs)
+
 # Mobile Secrets Talk
 
 Slides for the talk "The Secret to Mobile is API Design, App Architecture, and Data Handling"
